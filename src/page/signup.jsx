@@ -27,6 +27,7 @@ const Signup = () => {
 
   return (
     <div>
+      <h1> 회원가입</h1>
       <p>이메일</p>
       <input
         onChange={(e) => setEmail(e.target.value)}
@@ -47,12 +48,7 @@ const Signup = () => {
       />
       {password.length < 8 ? <p>8자 이상 입력해 주세요 </p> : <></>}
       <br />
-      <button
-        type="button"
-        data-testid="signup-button"
-        onClick={handleSubmit}
-        // disabled
-      >
+      <button type="button" data-testid="signup-button" onClick={handleSubmit}>
         회원가입
       </button>
     </div>
