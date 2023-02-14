@@ -40,9 +40,7 @@ const Signin = () => {
             password: pwRef.current.value,
           };
 
-          if (join.userId == "" || join.password == "") {
-            alert("내용을 입력해 주세요");
-          } else if (!join.userId.includes("@") || join.password.length < 8) {
+          if (!join.userId.includes("@") || join.password.length < 8) {
             setDisabled(true);
             alert("email @와 비밀번호 8자리 이상인지 확인 해주세요!");
           } else {
@@ -55,7 +53,7 @@ const Signin = () => {
                 localStorage.setItem("token", res.data.access_token)
               );
             alert("로그인 완료!");
-            navigate("/home");
+            navigate("/todo");
           }
         }}
         data-testid="signin-button"
