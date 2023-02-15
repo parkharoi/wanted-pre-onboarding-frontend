@@ -24,9 +24,3 @@ export const TodoApi = {
   updateTodo: (payload) => instance.put(`/todos`),
   deleteTodo: (payload) => instance.post(`/todos`),
 };
-
-// MyPageApi.putUsers(newInfo)
-// .then((res) => {
-//   console.log(res);
-// })
-// .catch((error) => console.log("수정실패라우...", error));
