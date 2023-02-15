@@ -37,8 +37,14 @@ const Todo = () => {
       </>
 
       <div>
-        {create?.map((update, i) => (
-          <TodoList key={update.id} update={update} i={i}></TodoList>
+        {create?.map((todos, i) => (
+          <TodoList
+            id={todos.id}
+            isComplated={todos.isComplated}
+            todo={todos.todo}
+            key={todos.id}
+            i={i}
+          ></TodoList>
         ))}
       </div>
     </div>

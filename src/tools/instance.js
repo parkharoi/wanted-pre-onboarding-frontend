@@ -21,6 +21,10 @@ export const baseInstance = baseAPI();
 export const TodoApi = {
   createTodo: (payload) => instance.post(`/todos`, payload),
   getTodos: () => instance.get(`/todos`),
-  updateTodo: (payload) => instance.put(`/todos`),
-  deleteTodo: (payload) => instance.post(`/todos`),
+  updateTodo: (payload) =>
+    instance.put(`/todos/${payload.id}`, {
+      todo: payload.todo,
+      isCompleted: payload.isCompleted,
+    }),
+  deleteTodo: (payload) => instance.delete(`/todos/${payload}`),
 };
